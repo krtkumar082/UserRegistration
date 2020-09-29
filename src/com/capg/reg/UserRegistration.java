@@ -34,12 +34,30 @@ public static void main(String[] args) {
 	            Matcher m2 = p2.matcher(lname);
 	            boolean matchfound2 = m2.find();
 	            if(matchfound2) {
-	            	System.out.println("Match found");
+	            	
 	            	found=true;
 	            	break;
 	            }
 	            else {
 	            	System.out.println("Incorrect name (Start with capital and should have min 3 charcaters ");
+	            	}
+	            
+	      }while(!found);
+	      
+	      do {
+	    	  found=false;
+	     System.out.println("Enter valid email ");
+	            String email = sc.nextLine();
+	            Pattern p3 =Pattern.compile("^abc([.+_-]{0,1}[0-9a-z]+)?@[a-z0-9]+(\\.[a-z]{2,}){1,2}");
+	            Matcher m3 = p3.matcher(email);
+	            boolean matchfound2 = m3.find();
+	            if(matchfound2) {
+	            	System.out.println("Match found");
+	            	found=true;
+	            	break;
+	            }
+	            else {
+	            	System.out.println("Incorrect email (Not in Proper Format ");
 	            	}
 	            
 	      }while(!found);
