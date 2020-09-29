@@ -84,7 +84,7 @@ public static void main(String[] args) {
 	    	  found=false;
 	     System.out.println("Enter valid Password(min 8 characters ");
 	            String passwd = sc.nextLine();
-	            Pattern p5 =Pattern.compile("(?=.*[A-Z])([a-zA-Z0-9]){8,}");
+	            Pattern p5 =Pattern.compile("(?=.*[0-9])(?=.*[A-Z])([a-zA-Z0-9]){8,}");
 	            Matcher m5 = p5.matcher(passwd);
 	            boolean matchfound2 = m5.find();
 	            if(matchfound2) {
