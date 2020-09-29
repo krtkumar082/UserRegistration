@@ -1,24 +1,47 @@
 package com.capg.reg;
+
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 public class UserRegistration {
 public static void main(String[] args) {
+	
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Welcome to User Registration");
-	System.out.println("Enter first name (Starts with capital)");
-	String fname = sc.nextLine();
-	Pattern pattern =Pattern.compile("^[A-Z]{1}[a-z]{2,}");
-	Matcher matcher = pattern.matcher(fname);
-	boolean matchfound = matcher.find();
-	if(matchfound) {
-		System.out.println("Match found");
-	}
-	else {
-		System.out.println("Incorrect name (Start with capital and should have min 3 charcaters ");
-		
+	boolean found=false;
 	
-	}
-	sc.close();
+	do {
+	   System.out.println("Enter first name (Starts with capital)");
+	            String fname = sc.nextLine();
+	             Pattern p1 =Pattern.compile("^[A-Z]{1}[a-z]{2,}");
+	            Matcher m1 = p1.matcher(fname);
+	            boolean matchfound1 = m1.find();
+	            if(matchfound1) {
+		         found=true;
+		       break;
+	              }
+	             else {
+		        System.out.println("Incorrect name (Start with capital and should have min 3 charcaters ");
+		                     }
+	}while(!found);
+	      
+	      do {
+	    	  found=false;
+	     System.out.println("Enter last name (Starts with capital)");
+	            String lname = sc.nextLine();
+	            Pattern p2 =Pattern.compile("^[A-Z]{1}[a-z]{2,}");
+	            Matcher m2 = p2.matcher(lname);
+	            boolean matchfound2 = m2.find();
+	            if(matchfound2) {
+	            	System.out.println("Match found");
+	            	found=true;
+	            	break;
+	            }
+	            else {
+	            	System.out.println("Incorrect name (Start with capital and should have min 3 charcaters ");
+	            	}
+	            
+	      }while(!found);
 }
 }
