@@ -70,12 +70,30 @@ public static void main(String[] args) {
 	            Matcher m4 = p4.matcher(number);
 	            boolean matchfound2 = m4.find();
 	            if(matchfound2) {
-	            	System.out.println("Match found");
+	            	
 	            	found=true;
 	            	break;
 	            }
 	            else {
 	            	System.out.println("Incorrect Number(Not in Proper Format ");
+	            	}
+	            
+	      }while(!found);
+	      
+	      do {
+	    	  found=false;
+	     System.out.println("Enter valid Password(min 8 characters ");
+	            String passwd = sc.nextLine();
+	            Pattern p5 =Pattern.compile("[a-zA-Z]{8,}");
+	            Matcher m5 = p5.matcher(passwd);
+	            boolean matchfound2 = m5.find();
+	            if(matchfound2) {
+	            	System.out.println("Valid");
+	            	found=true;
+	            	break;
+	            }
+	            else {
+	            	System.out.println("Invalid psswd (Not in Proper Format) ");
 	            	}
 	            
 	      }while(!found);
