@@ -48,16 +48,34 @@ public static void main(String[] args) {
 	    	  found=false;
 	     System.out.println("Enter valid email ");
 	            String email = sc.nextLine();
-	            Pattern p3 =Pattern.compile("^abc([.+_-]{0,1}[0-9a-z]+)?@[a-z0-9]+(\\.[a-z]{2,}){1,2}");
+	            Pattern p3 =Pattern.compile("^[a-z]([.+_-]{0,1}[0-9a-z]+)?@[a-z0-9]+(\\.[a-z]{2,}){1,2}");
 	            Matcher m3 = p3.matcher(email);
 	            boolean matchfound2 = m3.find();
+	            if(matchfound2) {
+	            	
+	            	found=true;
+	            	break;
+	            }
+	            else {
+	            	System.out.println("Incorrect email (Not in Proper Format ");
+	            	}
+	            
+	      }while(!found);
+	      
+	      do {
+	    	  found=false;
+	     System.out.println("Enter valid Phone Number ");
+	            String number = sc.nextLine();
+	            Pattern p4 =Pattern.compile("^[1-9]{1}[0-9]{1} [1-9]{1}[0-9]{9}");
+	            Matcher m4 = p4.matcher(number);
+	            boolean matchfound2 = m4.find();
 	            if(matchfound2) {
 	            	System.out.println("Match found");
 	            	found=true;
 	            	break;
 	            }
 	            else {
-	            	System.out.println("Incorrect email (Not in Proper Format ");
+	            	System.out.println("Incorrect Number(Not in Proper Format ");
 	            	}
 	            
 	      }while(!found);
